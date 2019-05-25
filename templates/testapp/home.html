@@ -1,0 +1,15 @@
+{%extends 'default.html'%}
+
+{%block body%}
+<br>
+{%include 'testapp/navbar.html'%}
+<br><br><br><br>
+                        <center><h2><p>Welcome to my NewsPortal</p></h2></center><br>
+
+                            {% for i in news%}
+    <center><a class    = "btn btn-primary btn-lg" href="/news/{{i.n_id}}/" role="button">{{i.category}}</a></center><br>
+
+                            {% endfor %}
+
+{%endblock%}
+

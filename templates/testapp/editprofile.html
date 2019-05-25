@@ -1,0 +1,19 @@
+{%extends 'default.html'%}
+
+{%block body%}
+<br>
+{%include 'testapp/navbar.html'%}
+<br>
+
+<div class        = "container">
+	<form method     = "POST">
+		{%csrf_token%}
+		{{form.as_p}}
+
+		<input class    = "btn btn-primary" type="submit" value="Submit">
+		<a class        = "btn btn-primary" href="/changepassword" role="button">Change Password</a>
+		
+	</form>
+		
+</div>
+{%endblock%}

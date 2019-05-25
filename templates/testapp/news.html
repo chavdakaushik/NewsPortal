@@ -1,0 +1,24 @@
+{%extends 'default.html'%}
+{%load staticfiles%}
+{%block body%}
+<br>
+{%include 'testapp/navbar.html'%}
+<br>
+ <div class                                                                               = "container">
+                <div class                                                                = "jumbotron">
+                    <div class                                                            = "container">
+                            <h2>HeadLines </h2><br>
+
+                            <!-- <hr class                                                = "my-8"> -->
+                            {%for n in news_item%}
+                            <ul>
+                                <li>{{n.des | upper}}&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Re    : -{{n.reporter_name}}</li>
+                            </ul>
+                            {% endfor%}
+                            <!-- <hr class                                                = "my-8"> -->
+                            
+                    </div>
+                </div>
+          </div>
+{%endblock%}
+

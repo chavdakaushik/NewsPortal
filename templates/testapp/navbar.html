@@ -1,0 +1,26 @@
+<nav class          = "navbar navbar-expand-lg navbar-light bg-light">
+  <a class          = "navbar-brand" href="{%url 'home'%}">Chavda Kaushik</a>
+    <button class   = "navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class   = "navbar-toggler-icon"></span>
+    </button>
+    <div class      = "collapse navbar-collapse" id="navbarNav">
+      {%if user.is_authenticated%}
+      <ul class     = "navbar-nav">
+        <li class   = "nav-item active">
+          <a class  = "nav-link" href="{%url 'profile'%}">Profile<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+    <a class        = "navbar-nav" href="{%url 'logout'%}">Logout</a>
+{%else%}
+   <div class       = "collapse navbar-collapse" id="navbarNav">
+      <ul class     = "navbar-nav">
+        <li class   = "nav-item active">
+          <a class  = "nav-link" href="{%url 'profile'%}">Profile<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+    </div>
+    <a class        = "navbar-nav" href="{%url 'login'%}">Login</a>&nbsp&nbsp&nbsp
+  <a class          = "navbar-nav" href="{%url 'register'%}">Register</a>
+{%endif%}
+</nav>

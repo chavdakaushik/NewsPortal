@@ -1,0 +1,23 @@
+{%extends 'default.html'%}
+
+{%block body%}
+<br>
+{%include 'testapp/navbar.html'%}
+<br>
+
+<div class        = "container">
+		<h1>Profile</h1>
+		<p>Username     : {{user}}</p>
+		<p>First name   : {{user.first_name}}</p>
+		<p>Last name    : {{user.last_name}}</p>
+		<p>E-Mail       : {{user.email}}</p>
+		<p>Description  : {{user.userprofile.desc}}</p>
+		<p>Phone        : {{user.userprofile.phone}}</p>
+		<p>City         : {{user.userprofile.city}}</p>
+		<p>Website      : {{user.userprofile.website}}</p>
+		<p><img src     = "{{user.userprofile.image.url}}" width='240'></p>
+
+		<a class        = "btn btn-primary" href="/profile/edit" role="button">Edit Profile</a>
+		
+</div>
+{%endblock%}

@@ -1,0 +1,31 @@
+{%extends 'default.html'%}
+
+{%block body%}
+<br>
+{%include 'testapp/navbar.html'%}
+<br>
+     <div class = "container">
+ 
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+ <h2>Register</h2>
+
+ <br>
+<form method = "POST" >
+    {% csrf_token %}
+             <table>
+                {{ form.as_table }}
+                 <tr>
+                    <td><br><input class = "btn btn-primary" type="submit" value="Register"></td>
+                </tr>
+             </table>
+         </form>
+     </div>
+
+{%endblock%}
+
